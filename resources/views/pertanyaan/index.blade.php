@@ -8,6 +8,7 @@
             <thead>
                 <tr>
                     <th scope="col">No</th>
+                    <th scope="col">ID Pertanyaan</th>
                     <th scope="col">Judul Pertanyaan</th>
                     <th scope="col">Pertanyaan</th>
                 </tr>
@@ -17,6 +18,7 @@
 
                 <tr>
                     <td> {{ $key+1 }} </td>
+                    <td> {{ $p->pertanyaan_id }} </td>
                     <td class="font-weight-bold text-success"> {{ $p->judul }} </td>
                     <td> {{ $p->isi }} </td>
                 </tr>
