@@ -6,7 +6,7 @@
 <div class="container bg-white">
     <div class="card-body">
         <h3>Form Pertanyaan</h3>
-        <form action="/pertanyaan" method="POST" class="was-validated">
+        <form action="{{url('/pertanyaan')}}" method="POST" class="was-validated">
             @csrf
             <div class="form-group">
                 <label for="judul">Judul Pertanyaan:</label>
