@@ -24,4 +24,13 @@ class PertanyaanModel
         $pertanyaans = DB::table('pertanyaans')->where('id', $id)->first();
         return $pertanyaans;
     }
+
+    public static function update($id, $request){
+        //dd($request);
+        $pertanyaans = DB::table('pertanyaans')->where('id', $id)->update([
+            'judul' => $request["judul"],
+            'isi_pertanyaan' => $request["isi"]
+        ]);
+        return $pertanyaans;
+    }
 }

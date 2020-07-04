@@ -31,6 +31,7 @@
               <a href="{{url('jawaban/'.$p->id.'/jawab')}}" class="btn btn-primary">Jawab Pertanyaan</a>
               <a href="{{url('jawaban/'.$p->id)}}" class="btn btn-success">Semua Jawaban</a>
               <a href="/pertanyaan/{{$p->id}}" class="btn btn-info">Detail</a>
+              <a href="/pertanyaan/{{$p->id}}/edit" class="btn btn-secondary">Edit</a>
             </div>
           </td>
         </tr>

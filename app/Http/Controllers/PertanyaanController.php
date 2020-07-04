@@ -46,4 +46,15 @@ class PertanyaanController extends Controller
         //dd(date('created_at'));
         return view('pertanyaan.show', compact('pertanyaans'));
     }
+
+    public function edit($id){
+        $pertanyaans = PertanyaanModel::find_by_id($id);
+        return view('pertanyaan.edit', compact('pertanyaans'));
+    }
+
+    public function update($id, Request $request){
+        //dd($request->all());
+        $pertanyaans = PertanyaanModel::update($id, $request->all());
+        return redirect('/pertanyaan');
+    }
 }
