@@ -5,16 +5,7 @@
     <h4>Daftar Pertanyaan</h4>
     <a href="pertanyaan/create" class="btn btn-primary">Buat Pertanyaan</a>
   </div>
-  <!-- @if (session('success'))
-  <div class="alert alert-success">
-    {{ session('success') }}
-  </div>
-  @endif
-  @if (session('error'))
-  <div class="alert alert-success">
-    {{ session('error') }}
-  </div>
-  @endif -->
+
   <div class="card-body">
     <table id="datatable" class="table table-bordered">
       <thead>
@@ -48,26 +39,4 @@
   </div>
 </div>
 
-<!-- /.content-wrapper -->
 @endsection
-
-
-
-
-
-<!-- @push('jsDatatable') -->
-<!-- DataTables -->
-<!-- <script src="{{ asset('adminlte/plugins/datatables/jquery.dataTables.js') }}"></script>
-<script src="{{ asset('adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.js') }}"></script>
-<script>
-  $(document).ready(function() {
-    $('#datatable').DataTable();
-  });
-</script>
-@endpush -->
-
-<!-- @push('cssDatatable') -->
-<!-- DataTables -->
-<link rel="stylesheet" href="{{ asset('adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}">
-
-<!-- @endpush -->
