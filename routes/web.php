@@ -21,8 +21,15 @@ Route::get('/master', function () {
     return view('adminlte.master');
 });
 
-Route::get('/pertanyaan', 'PertanyaanController@index'); //menampilkan halaman
+Route::get('/pertanyaan', 'PertanyaanController@index');
 
-Route::get('/pertanyaan/create', 'PertanyaanController@create'); //menyimpan data
+Route::get('/pertanyaan/create', 'PertanyaanController@create');
 
-Route::post('/pertanyaan', 'PertanyaanController@store'); //menyimpan dan menampilkan semua data setelah dilakukan penginputan
+Route::post('/pertanyaan', 'PertanyaanController@store');
+
+
+Route::get('/jawaban/{pertanyaan_id}', 'JawabanController@index');
+
+Route::post('/jawaban/{pertanyaan_id}', 'JawabanController@store');
+
+Route::get('/jawaban/{pertanyaan_id}/jawab', 'JawabanController@create');

@@ -15,6 +15,7 @@ class PertanyaanModel
     public static function save($data)
     {
         unset($data["_token"]);
+        unset($data["pertanyaan_id"]);
         $new_pertanyaans = DB::table('pertanyaans')->insert($data);
         return $new_pertanyaans;
     }
