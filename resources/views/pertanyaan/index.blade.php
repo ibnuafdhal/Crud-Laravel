@@ -24,12 +24,13 @@
           <td>{{$loop->iteration}}</td>
           <td>{{$p->judul }}</td>
           <td>{{$p->isi_pertanyaan }}</td>
-          <td>{{$p->created_at->format('d F Y H:i')}}</td>
-          <td>{{$p->updated_at->format('d F Y H:i')}}</td>
+          <td>{{$p->created_at->format('d F Y/H:i')}}</td>
+          <td>{{$p->updated_at->format('d F Y/H:i')}}</td>
           <td>
             <div class="d-flex justify-content-center">
               <a href="{{url('jawaban/'.$p->id.'/jawab')}}" class="btn btn-primary">Jawab Pertanyaan</a>
               <a href="{{url('jawaban/'.$p->id)}}" class="btn btn-success">Semua Jawaban</a>
+              <a href="/pertanyaan/{{$p->id}}" class="btn btn-info">Detail</a>
             </div>
           </td>
         </tr>

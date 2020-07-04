@@ -19,4 +19,9 @@ class PertanyaanModel
         $new_pertanyaans = DB::table('pertanyaans')->insert($data);
         return $new_pertanyaans;
     }
+
+    public static function find_by_id($id){
+        $pertanyaans = DB::table('pertanyaans')->where('id', $id)->first();
+        return $pertanyaans;
+    }
 }

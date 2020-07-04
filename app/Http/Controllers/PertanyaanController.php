@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PertanyaanModel;
 use App\Pertanyaan;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class PertanyaanController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -23,8 +21,6 @@ class PertanyaanController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
      * @return \Illuminate\Http\Response
      */
     public function create()
@@ -33,8 +29,6 @@ class PertanyaanController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -45,5 +39,11 @@ class PertanyaanController extends Controller
             'isi_pertanyaan'    => $request->isi,
         ]);
         return redirect('/pertanyaan');
+    }
+
+    public function show($id){
+        $pertanyaans = PertanyaanModel::find_by_id($id);
+        //dd(date('created_at'));
+        return view('pertanyaan.show', compact('pertanyaans'));
     }
 }

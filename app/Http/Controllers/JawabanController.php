@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Jawaban;
 use App\Pertanyaan;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 
 class JawabanController extends Controller
 {
@@ -55,5 +54,16 @@ class JawabanController extends Controller
         ]);
 
         return redirect('/pertanyaan');
+    }
+
+    public function show($pertanyaan_id){
+        $jawabans = Jawaban::where('pertanyaan_id', $pertanyaan_id)->get();
+        $pertanyaans = Pertanyaan::findOrFail($pertanyaan_id);
+
+        return view('pertanyaan.index', [
+            'title' => "Lihat Jawaban",
+            'jawaban'   => $jawabans,
+            'pertanyaan'    => $pertanyaans
+        ]);
     }
 }

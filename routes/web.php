@@ -11,6 +11,7 @@
 |
 */
 
+use App\Http\Controllers\PertanyaanController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,6 +28,7 @@ Route::get('/pertanyaan/create', 'PertanyaanController@create');
 
 Route::post('/pertanyaan', 'PertanyaanController@store');
 
+Route::get('pertanyaan/{id}', 'PertanyaanController@show');
 
 Route::get('/jawaban/{pertanyaan_id}', 'JawabanController@index');
 
